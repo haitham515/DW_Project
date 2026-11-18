@@ -1,0 +1,1449 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2026 2:56:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-D0FJO98"
+  DTS:CreatorName="DESKTOP-D0FJO98\HP"
+  DTS:DTSID="{6954F240-238B-470E-87C9-283DDAD62E1C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{C19B7E51-428A-4B21-A0CF-A6AA591528E0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Accounts"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{D946FA6C-E042-4774-AE14-FFB42DA6E991}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Accounts"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Accounts\Commande OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.DimAccount
+SET ParentAccountCodeAlternateKey = ?, AccountDescription = ?, AccountType = ?, Operator = ?,
+    CustomMembers = ?, ValueType = ?, CustomMemberOptions = ?
+WHERE AccountKey = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Accounts\Commande OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[ParentAccountCodeAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentAccountCodeAlternateKey"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentAccountCodeAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[AccountDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AccountDescription"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountDescription]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[AccountType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AccountType"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[Operator]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Operator"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Operator]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[CustomMembers]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="CustomMembers"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMembers]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[ValueType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ValueType"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ValueType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[CustomMemberOptions]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="CustomMemberOptions"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMemberOptions]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[AccountKey]"
+                      cachedDataType="i4"
+                      cachedName="AccountKey"
+                      externalMetadataColumnId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[AccountKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="300"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      dataType="i4"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Accounts\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Accounts\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimAccount]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Accounts\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[AccountCodeAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="AccountCodeAlternateKey"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountCodeAlternateKey]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountCodeAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ParentAccountCodeAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentAccountCodeAlternateKey"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentAccountCodeAlternateKey]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentAccountCodeAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[AccountDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AccountDescription"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountDescription]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountDescription]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[AccountType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AccountType"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountType]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Operator]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Operator"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Operator]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Operator]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[CustomMembers]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="CustomMembers"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CustomMembers]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMembers]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ValueType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ValueType"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ValueType]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ValueType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[CustomMemberOptions]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="CustomMemberOptions"
+                      externalMetadataColumnId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CustomMemberOptions]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMemberOptions]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountKey]"
+                      dataType="i4"
+                      name="AccountKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentAccountKey]"
+                      dataType="i4"
+                      name="ParentAccountKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountCodeAlternateKey]"
+                      dataType="i4"
+                      name="AccountCodeAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentAccountCodeAlternateKey]"
+                      dataType="i4"
+                      name="ParentAccountCodeAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountDescription]"
+                      dataType="wstr"
+                      length="50"
+                      name="AccountDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[AccountType]"
+                      dataType="wstr"
+                      length="50"
+                      name="AccountType" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Operator]"
+                      dataType="wstr"
+                      length="50"
+                      name="Operator" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CustomMembers]"
+                      dataType="wstr"
+                      length="300"
+                      name="CustomMembers" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ValueType]"
+                      dataType="wstr"
+                      length="50"
+                      name="ValueType" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CustomMemberOptions]"
+                      dataType="wstr"
+                      length="200"
+                      name="CustomMemberOptions" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Accounts\Fractionnement conditionnel"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Fractionnement conditionnel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Achemine des lignes de données vers différentes sorties, selon le contexte des données. Utilisez des conditions (expressions SSIS) pour spécifier les lignes qui seront acheminées. Par exemple, séparez les enregistrements qui doivent être nettoyés de ceux qui sont prêts à être chargés ou acheminez uniquement un sous-ensemble d'enregistrements."
+              name="Fractionnement conditionnel"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+                  description="Entrée vers la transformation de fractionnement conditionnel"
+                  name="Entrée de fractionnement conditionnel">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[ParentAccountCodeAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentAccountCodeAlternateKey"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentAccountCodeAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[AccountDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AccountDescription"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountDescription]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[AccountType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="AccountType"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Operator]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Operator"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Operator]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[CustomMembers]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="CustomMembers"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMembers]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[ValueType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ValueType"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ValueType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[CustomMemberOptions]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="CustomMemberOptions"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMemberOptions]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_ParentAccountCodeAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="Old_ParentAccountCodeAlternateKey"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ParentAccountCodeAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_AccountType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Old_AccountType"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_AccountDescription]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Old_AccountDescription"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountDescription]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_Operator]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Old_Operator"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_Operator]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_ValueType]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Old_ValueType"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ValueType]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_CustomMembers]"
+                      cachedDataType="wstr"
+                      cachedLength="300"
+                      cachedName="Old_CustomMembers"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMembers]" />
+                    <inputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel].Columns[Old_CustomMemberOptions]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Old_CustomMemberOptions"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMemberOptions]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Changed]"
+                  description="Sortie 1 de la transformation de fractionnement conditionnel"
+                  errorOrTruncationOperation="Calcul"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Changed"
+                  synchronousInputId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie l'expression. Cette version d'expression utilise les identificateurs de traçabilité à la place des noms de colonnes."
+                      name="Expression">[REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountDescription]},"") != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountDescription]},"") || [REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountType]},"") != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountType]},"") || [REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Operator]},"") != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_Operator]},"") || [REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMembers]},"") != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMembers]},"") || [REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ValueType]},"") != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ValueType]},"") || [REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMemberOptions]},"") != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMemberOptions]},"") || [REPLACENULL](#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentAccountCodeAlternateKey]},-1) != [REPLACENULL](#{Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ParentAccountCodeAlternateKey]},-1)</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Spécifie la version claire de l'expression. Cette version d'expression utilise les noms de colonnes."
+                      expressionType="Notify"
+                      name="FriendlyExpression">REPLACENULL(AccountDescription,"") != REPLACENULL(Old_AccountDescription,"") || REPLACENULL(AccountType,"") != REPLACENULL(Old_AccountType,"") || REPLACENULL(Operator,"") != REPLACENULL(Old_Operator,"") || REPLACENULL(CustomMembers,"") != REPLACENULL(Old_CustomMembers,"") || REPLACENULL(ValueType,"") != REPLACENULL(Old_ValueType,"") || REPLACENULL(CustomMemberOptions,"") != REPLACENULL(Old_CustomMemberOptions,"") || REPLACENULL(ParentAccountCodeAlternateKey,-1) != REPLACENULL(Old_ParentAccountCodeAlternateKey,-1)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Spécifie la position de la condition dans la liste des conditions que la transformation évalue. L'ordre d'évaluation se fait par ordre croissant de valeur."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Unchanged]"
+                  description="Sortie par défaut de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  name="Unchanged"
+                  synchronousInputId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel]"
+                  description="Sortie d'erreur de la transformation de fractionnement conditionnel"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de fractionnement conditionnel"
+                  synchronousInputId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Sortie d'erreur de fractionnement conditionnel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Accounts\Recherche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimAccount]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimAccount]) [refTable]
+where [refTable].[AccountCodeAlternateKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="AccountKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ParentAccountKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountCodeAlternateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ParentAccountCodeAlternateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountDescription" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AccountType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Operator" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomMembers" dataType="DT_WSTR" length="300" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ValueType" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CustomMemberOptions" dataType="DT_WSTR" length="200" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountCodeAlternateKey]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Accounts\Recherche.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Accounts\Recherche.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Accounts\Recherche.Inputs[Entrée de recherche].Columns[AccountCodeAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="AccountCodeAlternateKey"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountCodeAlternateKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">AccountCodeAlternateKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Load Accounts\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[AccountKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[AccountKey]"
+                      name="AccountKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">AccountKey</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[ParentAccountKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[ParentAccountKey]"
+                      name="ParentAccountKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">ParentAccountKey</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ParentAccountCodeAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ParentAccountCodeAlternateKey]"
+                      name="Old_ParentAccountCodeAlternateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">ParentAccountCodeAlternateKey</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="50"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountType]"
+                      name="Old_AccountType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">AccountType</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="50"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_AccountDescription]"
+                      name="Old_AccountDescription"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">AccountDescription</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_Operator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="50"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_Operator]"
+                      name="Old_Operator"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">Operator</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ValueType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="50"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_ValueType]"
+                      name="Old_ValueType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">ValueType</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMembers]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="300"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMembers]"
+                      name="Old_CustomMembers"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">CustomMembers</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMemberOptions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="200"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Old_CustomMemberOptions]"
+                      name="Old_CustomMemberOptions"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">CustomMemberOptions</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Load Accounts\Recherche.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load Accounts\Recherche.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Load Accounts\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Accounts\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT AccountCodeAlternateKey, ParentAccountCodeAlternateKey, AccountDescription,
+       AccountType, Operator, CustomMembers, ValueType, CustomMemberOptions
+FROM dbo.DimAccount</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Accounts\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{E65B5315-C7C5-4BA1-B7B9-BC5A101D4C4A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.AdventureWorksDW2025]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountCodeAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AccountCodeAlternateKey]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountCodeAlternateKey]"
+                      name="AccountCodeAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentAccountCodeAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParentAccountCodeAlternateKey]"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentAccountCodeAlternateKey]"
+                      name="ParentAccountCodeAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountDescription]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AccountDescription]"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountDescription]"
+                      name="AccountDescription"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AccountType]"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[AccountType]"
+                      name="AccountType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Operator]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Operator]"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Operator]"
+                      name="Operator"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMembers]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CustomMembers]"
+                      length="300"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMembers]"
+                      name="CustomMembers"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ValueType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ValueType]"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ValueType]"
+                      name="ValueType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMemberOptions]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CustomMemberOptions]"
+                      length="200"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CustomMemberOptions]"
+                      name="CustomMemberOptions"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AccountCodeAlternateKey]"
+                      dataType="i4"
+                      name="AccountCodeAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParentAccountCodeAlternateKey]"
+                      dataType="i4"
+                      name="ParentAccountCodeAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AccountDescription]"
+                      dataType="wstr"
+                      length="50"
+                      name="AccountDescription" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[AccountType]"
+                      dataType="wstr"
+                      length="50"
+                      name="AccountType" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Operator]"
+                      dataType="wstr"
+                      length="50"
+                      name="Operator" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CustomMembers]"
+                      dataType="wstr"
+                      length="300"
+                      name="CustomMembers" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ValueType]"
+                      dataType="wstr"
+                      length="50"
+                      name="ValueType" />
+                    <externalMetadataColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CustomMemberOptions]"
+                      dataType="wstr"
+                      length="200"
+                      name="CustomMemberOptions" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AccountCodeAlternateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AccountCodeAlternateKey]"
+                      name="AccountCodeAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ParentAccountCodeAlternateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ParentAccountCodeAlternateKey]"
+                      name="ParentAccountCodeAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AccountDescription]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AccountDescription]"
+                      name="AccountDescription" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AccountType]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[AccountType]"
+                      name="AccountType" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Operator]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Operator]"
+                      name="Operator" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CustomMembers]"
+                      dataType="wstr"
+                      length="300"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CustomMembers]"
+                      name="CustomMembers" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ValueType]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ValueType]"
+                      name="ValueType" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CustomMemberOptions]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CustomMemberOptions]"
+                      name="CustomMemberOptions" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Accounts\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Accounts.Paths[Changed]"
+              endId="Package\Load Accounts\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+              name="Changed"
+              startId="Package\Load Accounts\Fractionnement conditionnel.Outputs[Changed]" />
+            <path
+              refId="Package\Load Accounts.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Load Accounts\Fractionnement conditionnel.Inputs[Entrée de fractionnement conditionnel]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Load Accounts.Paths[Sortie de recherche sans correspondance]"
+              endId="Package\Load Accounts\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\Load Accounts\Recherche.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\Load Accounts.Paths[Sortie de source OLE DB]"
+              endId="Package\Load Accounts\Recherche.Inputs[Entrée de recherche]"
+              name="Sortie de source OLE DB"
+              startId="Package\Load Accounts\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Resolve parent accounts"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{C34323BB-CBF6-47AE-B225-F35F279E2A95}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Resolve parent accounts"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}"
+          SQLTask:SqlStatementSource="UPDATE c&#xA;SET ParentAccountKey = p.AccountKey&#xA;FROM dbo.DimAccount c&#xA;LEFT JOIN dbo.DimAccount p ON p.AccountCodeAlternateKey = c.ParentAccountCodeAlternateKey&#xA;WHERE ISNULL(c.ParentAccountKey, -1) &lt;&gt; ISNULL(p.AccountKey, -1);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{9C3E3231-3CA8-4C59-8C9D-A81744B68832}"
+      DTS:From="Package\Load Accounts"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Resolve parent accounts" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42.6666666666667"
+          Id="Package\Load Accounts"
+          TopLeft="339.999984800816,72.1499965596201" />
+        <NodeLayout
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\Resolve parent accounts"
+          TopLeft="317.499985806644,186.549991104603" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="414.416651970397,114.816663226287">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.7333278783164"
+              Start="0,0"
+              End="0,64.2333278783164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.2333278783164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Accounts">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.333333333334,42.6666666666667"
+          Id="Package\Load Accounts\Recherche"
+          TopLeft="260.624988349155,147.549992964268" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load Accounts\Destination OLE DB"
+          TopLeft="76.2499965913595,256.099987788201" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Load Accounts\Source OLE DB"
+          TopLeft="246.124989802018,52.6499974894525" />
+        <NodeLayout
+          Size="213.333333333334,42.6666666666667"
+          Id="Package\Load Accounts\Fractionnement conditionnel"
+          TopLeft="396.749983068556,272.999986982346" />
+        <NodeLayout
+          Size="200.666666666667,42"
+          Id="Package\Load Accounts\Commande OLE DB"
+          TopLeft="398.499983347953,355.733316720327" />
+        <EdgeLayout
+          Id="Package\Load Accounts.Paths[Sortie de source OLE DB]"
+          TopLeft="323.374989075586,95.3166641561191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.2333288081488"
+              Start="0,0"
+              End="0,44.7333288081488">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.7333288081488" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Accounts.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="305.069432793599,190.216659630935">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-142.81943620224,65.8833281572662"
+              Start="0,0"
+              End="-142.81943620224,58.3833281572662">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.8363862147724" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.8363862147724"
+                    Point2="0,26.8363862147724"
+                    Point3="-4,26.8363862147724" />
+                  <mssgle:LineSegment
+                    End="-138.81943620224,26.8363862147724" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-138.81943620224,26.8363862147724"
+                    Point2="-142.81943620224,26.8363862147724"
+                    Point3="-142.81943620224,30.8363862147724" />
+                  <mssgle:LineSegment
+                    End="-142.81943620224,58.3833281572662" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-162.91172981987,31.8363862147724,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Accounts.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="345.513877238044,190.216659630935">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.902772497179,82.7833273514115"
+              Start="0,0"
+              End="157.902772497179,75.2833273514115">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.7202962734874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.7202962734874"
+                    Point2="0,33.7202962734874"
+                    Point3="4,33.7202962734874" />
+                  <mssgle:LineSegment
+                    End="153.902772497179,33.7202962734874" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.902772497179,33.7202962734874"
+                    Point2="157.902772497179,33.7202962734874"
+                    Point3="157.902772497179,37.7202962734874" />
+                  <mssgle:LineSegment
+                    End="157.902772497179,75.2833273514115" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-12.7256254701604,38.7202962734874,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Accounts.Paths[Changed]"
+          TopLeft="501.124983208254,315.666653649013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0666630713146"
+              Start="0,0"
+              End="0,32.5666630713146">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5666630713146" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-19.8755078125,10.4517885669073,39.751015625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Accounts\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimAccount]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Accounts\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Accounts\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

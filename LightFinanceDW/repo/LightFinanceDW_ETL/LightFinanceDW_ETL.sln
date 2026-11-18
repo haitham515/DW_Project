@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "LightFinanceDW_ETL", "LightFinanceDW_ETL\LightFinanceDW_ETL.dtproj", "{CC78B358-DC83-1267-A18D-A68771EAD5F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC78B358-DC83-1267-A18D-A68771EAD5F3}.Development|Default.ActiveCfg = Development
+		{CC78B358-DC83-1267-A18D-A68771EAD5F3}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {55F472F9-B9DA-4227-9305-84302B6205A0}
+	EndGlobalSection
+EndGlobal

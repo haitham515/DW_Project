@@ -1,0 +1,132 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Finance.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\Finance.cube||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Organization.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\Organization.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Account.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\Account.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Department Group.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\Department Group.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Scenario.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\Scenario.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\Date.dim||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\LightFinanceDW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design",
+      "RelativeMoniker": "D:0:0:{73DBFE67-298B-EA96-D861-016CBEF66B66}|LightFinanceDW_Cube\\LightFinanceDW_Cube.dwproj|solutionrelative:LightFinanceDW_Cube\\LightFinanceDW.dsv||{B4191D15-2D32-45F2-906F-E91BBAAA6059}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Finance.cube [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Finance.cube",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\Finance.cube",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Finance.cube [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\Finance.cube [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T08:42:32.253Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Organization.dim [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Organization.dim",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\Organization.dim",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Organization.dim [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\Organization.dim [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T08:38:07.972Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Account.dim [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Account.dim",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\Account.dim",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Account.dim [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\Account.dim [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T08:34:13.885Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Department Group.dim [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Department Group.dim",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\Department Group.dim",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Department Group.dim [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\Department Group.dim [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T08:25:13.016Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Scenario.dim [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Scenario.dim",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\Scenario.dim",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Scenario.dim [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\Scenario.dim [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T08:19:10.18Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Date.dim [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Date.dim",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\Date.dim",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\Date.dim [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\Date.dim [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T08:05:32.011Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LightFinanceDW.dsv [Conception]",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\LightFinanceDW.dsv",
+              "RelativeDocumentMoniker": "LightFinanceDW_Cube\\LightFinanceDW.dsv",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ASEDS ine1\\S3 P1\\SD\\Projet\\LightFinanceDW\\repo\\LightFinanceDW_Cube\\LightFinanceDW_Cube\\LightFinanceDW.dsv [Conception]",
+              "RelativeToolTip": "LightFinanceDW_Cube\\LightFinanceDW.dsv [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-11-17T07:56:13.5Z",
+              "EditorCaption": " [Conception]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

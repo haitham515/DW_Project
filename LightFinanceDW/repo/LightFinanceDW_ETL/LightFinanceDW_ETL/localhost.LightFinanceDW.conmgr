@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.LightFinanceDW"
+  DTS:DTSID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=LightFinanceDW;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-LightFinanceDW_ETL-{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}localhost.LightFinanceDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

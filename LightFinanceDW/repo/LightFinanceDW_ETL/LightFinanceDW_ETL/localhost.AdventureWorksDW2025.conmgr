@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.AdventureWorksDW2025"
+  DTS:DTSID="{E65B5315-C7C5-4BA1-B7B9-BC5A101D4C4A}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;User ID=;Initial Catalog=AdventureWorksDW2025;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Trust Server Certificate=True;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-LightFinanceDW_ETL-{E65B5315-C7C5-4BA1-B7B9-BC5A101D4C4A}localhost.AdventureWorksDW2025;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

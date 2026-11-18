@@ -1,0 +1,5 @@
+SELECT [Measures].[Amount] ON COLUMNS,
+       [Date].[Fiscal Year].[Fiscal Year].Members ON ROWS
+FROM [Finance]
+WHERE ( [Account].[Account].[Amortization of Goodwill],
+        [Scenario].[Scenario].[Actual] );

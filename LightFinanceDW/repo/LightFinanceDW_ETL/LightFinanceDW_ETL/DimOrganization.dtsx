@@ -1,0 +1,1968 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2026 8:37:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-D0FJO98"
+  DTS:CreatorName="DESKTOP-D0FJO98\HP"
+  DTS:DTSID="{02880A9D-429D-4CFF-BC9C-D7DD4EE78EDD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{7D9C2B0F-82ED-43F2-9861-3A48A7ACDB98}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load organizations"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{439D7B6F-1D11-4DB2-B04A-F767C30945DC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load organizations"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load organizations\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load organizations\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[EndDate]"
+                      dataType="dbTimeStamp"
+                      description="EndDate"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load organizations\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[EndDate]"
+                      name="EndDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load organizations\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Colonne dérivée 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load organizations\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[StartDate]"
+                      dataType="dbTimeStamp"
+                      description="StartDate"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[StartDate]"
+                      name="StartDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load organizations\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Commande OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimOrganization] SET [EndDate] = ? WHERE [OrganizationAlternateKey] = ? AND [EndDate] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load organizations\Commande OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[OrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationAlternateKey"
+                      externalMetadataColumnId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[EndDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="EndDate"
+                      externalMetadataColumnId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Load organizations\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[EndDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Commande OLE DB 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[DimOrganization] SET [OrganizationName] = ? WHERE [OrganizationAlternateKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load organizations\Commande OLE DB 1.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB].Columns[OrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationAlternateKey"
+                      externalMetadataColumnId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB].Columns[OrganizationName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OrganizationName"
+                      externalMetadataColumnId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationName]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Commande OLE DB 1.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Commande OLE DB 1.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Commande OLE DB 1.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Commande OLE DB 1.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Commande OLE DB 1.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Commande OLE DB 1.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Destination d'insertion"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination d'insertion"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimOrganization]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load organizations\Destination d'insertion.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].Columns[OrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationAlternateKey"
+                      externalMetadataColumnId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationAlternateKey]"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].Columns[ParentOrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentOrganizationAlternateKey"
+                      externalMetadataColumnId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationAlternateKey]"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[ParentOrganizationAlternateKey]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].Columns[PercentageOfOwnership]"
+                      cachedDataType="numeric"
+                      cachedName="PercentageOfOwnership"
+                      cachedPrecision="5"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[PercentageOfOwnership]"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[PercentageOfOwnership]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].Columns[OrganizationName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OrganizationName"
+                      externalMetadataColumnId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationName]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      externalMetadataColumnId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].Columns[StartDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="StartDate"
+                      externalMetadataColumnId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[StartDate]"
+                      lineageId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie de colonne dérivée].Columns[StartDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationKey]"
+                      dataType="i4"
+                      name="OrganizationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationAlternateKey]"
+                      dataType="i4"
+                      name="OrganizationAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationKey]"
+                      dataType="i4"
+                      name="ParentOrganizationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[ParentOrganizationAlternateKey]"
+                      dataType="i4"
+                      name="ParentOrganizationAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[PercentageOfOwnership]"
+                      dataType="numeric"
+                      name="PercentageOfOwnership"
+                      precision="5"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="50"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[CurrencyKey]"
+                      dataType="i4"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB].ExternalColumns[IsCurrent]"
+                      dataType="bool"
+                      name="IsCurrent" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Destination d'insertion.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Destination d'insertion.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Destination d'insertion.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Destination d'insertion.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Dimension à variation lente"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimension à variation lente;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;3"
+              description="Met à jour une dimension d'entrepôt de données (Data Warehouse) SQL Server Analysis Services. Mettez à jour les enregistrements de dimension qui sont déjà présents et insérez ceux qui ne le sont pas. Par exemple, mettez à jour la table DimProduct de la base de données OLAP AdventureWorksDW avec les données de la table Products dans la base de données OLTP AdventureWorks."
+              name="Dimension à variation lente"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SELECT utilisée pour créer un ensemble de lignes du schéma."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [CurrencyKey], [OrganizationAlternateKey], [OrganizationName], [PercentageOfOwnership],[StartDate],[EndDate] FROM [dbo].[DimOrganization]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la clause WHERE dans l'instruction SELECT qui sélectionne la ligne actuelle parmi les lignes comportant des clés de travail identiques."
+                  name="CurrentRowWhere">[StartDate] IS NOT NULL AND [EndDate] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les mises à jour d'attribut d'historique sont dirigées sur la sortie de la transformation pour les mises à jour d'attribut de validation."
+                  name="UpdateChangingAttributeHistory">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation échoue lorsque les colonnes comportant des attributs fixes contiennent des modifications."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de la colonne pour le membre déduit."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les mises à jour de membre déduit sont détectées."
+                  name="EnableInferredMember">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si la transformation échoue lorsque la recherche d'un enregistrement existant échoue."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie que toutes les lignes de l'entrée sont nouvelles ou que la transformation détecte le type de modification."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load organizations\Dimension à variation lente.Connections[LookupConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Définit la connexion à utiliser pour faire des recherches dans la table de dimension"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]"
+                  name="Entrée de dimension à variation lente">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      externalMetadataColumnId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance].Columns[CurrencyKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">4</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].Columns[OrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationAlternateKey"
+                      externalMetadataColumnId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[OrganizationAlternateKey]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].Columns[OrganizationName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OrganizationName"
+                      externalMetadataColumnId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[OrganizationName]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].Columns[PercentageOfOwnership]"
+                      cachedDataType="numeric"
+                      cachedName="PercentageOfOwnership"
+                      cachedPrecision="5"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[PercentageOfOwnership]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PercentageOfOwnership]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[CurrencyKey]"
+                      dataType="i4"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[OrganizationAlternateKey]"
+                      dataType="i4"
+                      name="OrganizationAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="50"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[PercentageOfOwnership]"
+                      dataType="numeric"
+                      name="PercentageOfOwnership"
+                      precision="5"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[StartDate]"
+                      dataType="dbTimeStamp"
+                      name="StartDate" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente].ExternalColumns[EndDate]"
+                      dataType="dbTimeStamp"
+                      name="EndDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie inchangée]"
+                  description="Lignes inchangées"
+                  exclusionGroup="1"
+                  name="Sortie inchangée"
+                  synchronousInputId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Dimension à variation lente.Outputs[Nouvelle sortie]"
+                  description="Nouvelles lignes"
+                  exclusionGroup="1"
+                  name="Nouvelle sortie"
+                  synchronousInputId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie d'attribut fixe]"
+                  description="Lignes comportant des modifications dans les colonnes marquées FixedAttribute"
+                  exclusionGroup="1"
+                  name="Sortie d'attribut fixe"
+                  synchronousInputId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie de mises à jour d'attribut de validation]"
+                  description="Ces lignes contiennent de nouvelles informations sur les modifications de colonnes ChangingAttribute (type 1)"
+                  exclusionGroup="1"
+                  name="Sortie de mises à jour d'attribut de validation"
+                  synchronousInputId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie d'insertions d'attribut d'historique]"
+                  description="Les modifications sur HistoricalAttribute (type 2) apparaissent dans ces nouvelles lignes"
+                  exclusionGroup="2"
+                  name="Sortie d'insertions d'attribut d'historique"
+                  synchronousInputId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie de mises à jour de membre déduit]"
+                  description="Information de mise à jour de ligne de dimension initiale non remplie"
+                  exclusionGroup="1"
+                  name="Sortie de mises à jour de membre déduit"
+                  synchronousInputId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Lookup CurrencyKey"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Lookup CurrencyKey"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimCurrency]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimCurrency]) [refTable]
+where [refTable].[CurrencyAlternateKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CurrencyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyAlternateKey" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CurrencyAlternateKey]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load organizations\Lookup CurrencyKey.Connections[OleDbConnection]"
+                  connectionManagerID="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.LightFinanceDW]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Lookup CurrencyKey.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Lookup CurrencyKey.Inputs[Entrée de recherche].Columns[CurrencyAlternateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CurrencyAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CurrencyAlternateKey]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">CurrencyAlternateKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Load organizations\Lookup CurrencyKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance].Columns[CurrencyKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">CurrencyKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Load organizations\Lookup CurrencyKey.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Load organizations\Lookup CurrencyKey.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT o.OrganizationKey        AS OrganizationAlternateKey,
+       o.ParentOrganizationKey  AS ParentOrganizationAlternateKey,
+       o.OrganizationName,
+       TRY_CAST(o.PercentageOfOwnership AS decimal(5,4)) AS PercentageOfOwnership,
+       c.CurrencyAlternateKey
+FROM dbo.DimOrganization o
+LEFT JOIN dbo.DimCurrency c ON c.CurrencyKey = o.CurrencyKey;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load organizations\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{E65B5315-C7C5-4BA1-B7B9-BC5A101D4C4A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.AdventureWorksDW2025]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OrganizationAlternateKey]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]"
+                      name="OrganizationAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentOrganizationAlternateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParentOrganizationAlternateKey]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentOrganizationAlternateKey]"
+                      name="ParentOrganizationAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OrganizationName]"
+                      length="50"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationName]"
+                      name="OrganizationName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PercentageOfOwnership]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[PercentageOfOwnership]"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PercentageOfOwnership]"
+                      name="PercentageOfOwnership"
+                      precision="5"
+                      scale="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CurrencyAlternateKey]"
+                      length="3"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CurrencyAlternateKey]"
+                      name="CurrencyAlternateKey"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OrganizationAlternateKey]"
+                      dataType="i4"
+                      name="OrganizationAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ParentOrganizationAlternateKey]"
+                      dataType="i4"
+                      name="ParentOrganizationAlternateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[OrganizationName]"
+                      dataType="wstr"
+                      length="50"
+                      name="OrganizationName" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[PercentageOfOwnership]"
+                      dataType="numeric"
+                      name="PercentageOfOwnership"
+                      precision="5"
+                      scale="4" />
+                    <externalMetadataColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      length="3"
+                      name="CurrencyAlternateKey" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OrganizationAlternateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OrganizationAlternateKey]"
+                      name="OrganizationAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ParentOrganizationAlternateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ParentOrganizationAlternateKey]"
+                      name="ParentOrganizationAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OrganizationName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[OrganizationName]"
+                      name="OrganizationName" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[PercentageOfOwnership]"
+                      dataType="numeric"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[PercentageOfOwnership]"
+                      name="PercentageOfOwnership"
+                      precision="5"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CurrencyAlternateKey]"
+                      name="CurrencyAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load organizations\Unir tout"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unir tout;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Combine des lignes de plusieurs flux de données sans effectuer de tri. Par exemple, rajoutez des lignes à un flux de données après correction des erreurs. Si le tri est important, nous recommandons l'utilisation de la transformation de fusion."
+              name="Unir tout"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1]"
+                  name="Unir tout entrée 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1].Columns[OrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationAlternateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1].Columns[ParentOrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentOrganizationAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentOrganizationAlternateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[ParentOrganizationAlternateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1].Columns[OrganizationName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OrganizationName"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1].Columns[PercentageOfOwnership]"
+                      cachedDataType="numeric"
+                      cachedName="PercentageOfOwnership"
+                      cachedPrecision="5"
+                      cachedScale="4"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PercentageOfOwnership]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[PercentageOfOwnership]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1].Columns[CurrencyAlternateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CurrencyAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CurrencyAlternateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyAlternateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      lineageId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance].Columns[CurrencyKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1]"
+                  hasSideEffects="true"
+                  name="Entrée Union All 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1].Columns[OrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="OrganizationAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationAlternateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationAlternateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1].Columns[ParentOrganizationAlternateKey]"
+                      cachedDataType="i4"
+                      cachedName="ParentOrganizationAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ParentOrganizationAlternateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[ParentOrganizationAlternateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1].Columns[OrganizationName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="OrganizationName"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[OrganizationName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1].Columns[PercentageOfOwnership]"
+                      cachedDataType="numeric"
+                      cachedName="PercentageOfOwnership"
+                      cachedPrecision="5"
+                      cachedScale="4"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[PercentageOfOwnership]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[PercentageOfOwnership]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1].Columns[CurrencyAlternateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="CurrencyAlternateKey"
+                      lineageId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CurrencyAlternateKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyAlternateKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      lineageId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance].Columns[CurrencyKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID de traçabilité de colonne de sortie"
+                          name="OutputColumnLineageID">#{Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyKey]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 2]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrée Union All 2">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1]"
+                  name="Unir tout sortie 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationAlternateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationAlternateKey]"
+                      name="OrganizationAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[ParentOrganizationAlternateKey]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[ParentOrganizationAlternateKey]"
+                      name="ParentOrganizationAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[OrganizationName]"
+                      name="OrganizationName" />
+                    <outputColumn
+                      refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[PercentageOfOwnership]"
+                      dataType="numeric"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[PercentageOfOwnership]"
+                      name="PercentageOfOwnership"
+                      precision="5"
+                      scale="4" />
+                    <outputColumn
+                      refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyAlternateKey]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyAlternateKey]"
+                      name="CurrencyAlternateKey" />
+                    <outputColumn
+                      refId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1].Columns[CurrencyKey]"
+                      name="CurrencyKey" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load organizations.Paths[Nouvelle sortie]"
+              endId="Package\Load organizations\Unir tout.Inputs[Unir tout entrée 1]"
+              name="Nouvelle sortie"
+              startId="Package\Load organizations\Dimension à variation lente.Outputs[Nouvelle sortie]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie d'insertions d'attribut d'historique]"
+              endId="Package\Load organizations\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie d'insertions d'attribut d'historique"
+              startId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie d'insertions d'attribut d'historique]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie de colonne dérivée]"
+              endId="Package\Load organizations\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load organizations\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie de colonne dérivée1]"
+              endId="Package\Load organizations\Destination d'insertion.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load organizations\Colonne dérivée 1.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie de commande OLE DB]"
+              endId="Package\Load organizations\Unir tout.Inputs[Entrée Union All 1]"
+              name="Sortie de commande OLE DB"
+              startId="Package\Load organizations\Commande OLE DB.Outputs[Sortie de commande OLE DB]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie de mises à jour d'attribut de validation]"
+              endId="Package\Load organizations\Commande OLE DB 1.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de mises à jour d'attribut de validation"
+              startId="Package\Load organizations\Dimension à variation lente.Outputs[Sortie de mises à jour d'attribut de validation]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Load organizations\Dimension à variation lente.Inputs[Entrée de dimension à variation lente]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Load organizations\Lookup CurrencyKey.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Load organizations.Paths[Sortie de source OLE DB]"
+              endId="Package\Load organizations\Lookup CurrencyKey.Inputs[Entrée de recherche]"
+              name="Sortie de source OLE DB"
+              startId="Package\Load organizations\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+            <path
+              refId="Package\Load organizations.Paths[Unir tout sortie 1]"
+              endId="Package\Load organizations\Colonne dérivée 1.Inputs[Entrée de colonne dérivée]"
+              name="Unir tout sortie 1"
+              startId="Package\Load organizations\Unir tout.Outputs[Unir tout sortie 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Resolve parent organizations"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{81812FAA-0FB8-4BFB-BA8B-E60CDDBED743}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Resolve parent organizations"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}"
+          SQLTask:SqlStatementSource="UPDATE c SET ParentOrganizationKey = p.OrganizationKey&#xA;FROM dbo.DimOrganization c&#xA;LEFT JOIN dbo.DimOrganization p&#xA;       ON p.OrganizationAlternateKey = c.ParentOrganizationAlternateKey&#xA;      AND p.EndDate IS NULL&#xA;WHERE ISNULL(c.ParentOrganizationKey, -1) &lt;&gt; ISNULL(p.OrganizationKey, -1);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set initial validity date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{3BCD5307-3EF1-4B44-8C2D-1DC59220179E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set initial validity date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}"
+          SQLTask:SqlStatementSource="UPDATE o SET StartDate = '20100701'&#xA;FROM dbo.DimOrganization o&#xA;WHERE o.StartDate &lt;&gt; '20100701'&#xA;  AND NOT EXISTS (SELECT 1 FROM dbo.DimOrganization older&#xA;                  WHERE older.OrganizationAlternateKey = o.OrganizationAlternateKey&#xA;                    AND older.OrganizationKey &lt; o.OrganizationKey);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{50C36078-8B44-4F92-A5A8-84758ACEBF72}"
+      DTS:From="Package\Load organizations"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Set initial validity date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D30BB7D7-C85D-4819-A9FC-D7CDCE22AA4F}"
+      DTS:From="Package\Set initial validity date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Resolve parent organizations" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\Load organizations"
+          TopLeft="179.999991953373,63.6999969625474" />
+        <NodeLayout
+          Size="182.666666666667,42.6666666666667"
+          Id="Package\Set initial validity date"
+          TopLeft="166.249992568046,170.949991848469" />
+        <NodeLayout
+          Size="214.666666666667,42.6666666666667"
+          Id="Package\Resolve parent organizations"
+          TopLeft="153.74999312684,268.449987199307" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="260.791658927376,106.366663629214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.583328219255"
+              Start="0,0"
+              End="0,57.083328219255">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.083328219255" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="259.333326180776,213.616658515136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.833328684171"
+              Start="0,0"
+              End="0,47.333328684171">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.333328684171" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load organizations">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Load organizations\Source OLE DB"
+          TopLeft="163.166666666667,5.49999999999993" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Load organizations\Lookup CurrencyKey"
+          TopLeft="150.5,108.166666666666" />
+        <NodeLayout
+          Size="208,42.6666666666667"
+          Id="Package\Load organizations\Dimension à variation lente"
+          TopLeft="134.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie de source OLE DB]"
+          TopLeft="238.5,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="238.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999998"
+              Start="0,0"
+              End="0,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,20.4453124999999,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Load organizations\Colonne dérivée"
+          TopLeft="23.1666666666667,313.5" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie d'insertions d'attribut d'historique]"
+          TopLeft="188.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-88,60"
+              Start="0,0"
+              End="-88,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="-4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="-84,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-84,20.506329113924"
+                    Point2="-88,20.506329113924"
+                    Point3="-88,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="-88,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-132.54201171875,25.506329113924,177.0840234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Load organizations\Commande OLE DB"
+          TopLeft="5.50000000000006,416.166666666666" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie de colonne dérivée]"
+          TopLeft="100.5,356.166666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,60.0000000000001"
+              Start="0,0"
+              End="-9,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-5,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,30"
+                    Point2="-9,30"
+                    Point3="-9,34" />
+                  <mssgle:LineSegment
+                    End="-9,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Load organizations\Unir tout"
+          TopLeft="177.833333333333,518.833333333333" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Nouvelle sortie]"
+          TopLeft="238.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8888888888889,265.333333333333"
+              Start="0,0"
+              End="18.8888888888889,257.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
+                  <mssgle:LineSegment
+                    End="14.8888888888889,157.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8888888888889,157.127982646421"
+                    Point2="18.8888888888889,157.127982646421"
+                    Point3="18.8888888888889,161.127982646421" />
+                  <mssgle:LineSegment
+                    End="18.8888888888889,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.6919032118055,162.127982646421,66.2726953125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie de commande OLE DB]"
+          TopLeft="91.5000000000001,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="128.111111111111,60"
+              Start="0,0"
+              End="128.111111111111,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="124.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.111111111111,35.531453362256"
+                    Point2="128.111111111111,35.531453362256"
+                    Point3="128.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="128.111111111111,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Load organizations\Colonne dérivée 1"
+          TopLeft="156.5,621.5" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Unir tout sortie 1]"
+          TopLeft="238.5,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42.6666666666667"
+          Id="Package\Load organizations\Destination d'insertion"
+          TopLeft="146.5,724.166666666667" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie de colonne dérivée1]"
+          TopLeft="238.5,664.166666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Load organizations\Commande OLE DB 1"
+          TopLeft="299.833333333333,313.5" />
+        <EdgeLayout
+          Id="Package\Load organizations.Paths[Sortie de mises à jour d'attribut de validation]"
+          TopLeft="288.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="102,60"
+              Start="0,0"
+              End="102,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.506329113924"
+                    Point2="0,20.506329113924"
+                    Point3="4,20.506329113924" />
+                  <mssgle:LineSegment
+                    End="98,20.506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="98,20.506329113924"
+                    Point2="102,20.506329113924"
+                    Point3="102,24.506329113924" />
+                  <mssgle:LineSegment
+                    End="102,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.83259765625,25.506329113924,199.6651953125,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load organizations\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load organizations\Lookup CurrencyKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimCurrency]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load organizations\Dimension à variation lente">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionID&gt;{B2421CC9-8F76-43DA-9FCF-EE599FD72F24}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[DimOrganization]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Lookup CurrencyKey.Sorties[Sortie de recherche avec correspondance].Colonnes[CurrencyKey]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CurrencyKey&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;FixedAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source OLE DB.Sorties[Sortie de source OLE DB].Colonnes[OrganizationAlternateKey]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;OrganizationAlternateKey&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source OLE DB.Sorties[Sortie de source OLE DB].Colonnes[OrganizationName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;OrganizationName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source OLE DB.Sorties[Sortie de source OLE DB].Colonnes[ParentOrganizationAlternateKey]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ParentOrganizationAlternateKey&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Source OLE DB.Sorties[Sortie de source OLE DB].Colonnes[PercentageOfOwnership]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;PercentageOfOwnership&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Colonne dérivée&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Commande OLE DB&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Unir tout&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Colonne dérivée 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Destination d'insertion&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Commande OLE DB 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;true&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;StartDate&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;EndDate&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
